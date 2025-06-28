@@ -30,23 +30,40 @@ const Cards = () => {
   };
 
   return (
+    <div className='page'>
+
+    <header className="gallery-header">
+    <h1 className="gallery-title">D'Cake House's Gallery</h1>
+    <img src="../../images/logo.png" alt="Logo" className="gallery-logo" />
+  </header>
+
     <div className="container">
-      {selectedCategory === null ? (
-        categories.map((cat, idx) => (
-          <div key={idx} className="card" onClick={() => setSelectedCategory(cat)} style={{
+  {selectedCategory === null ? (
+    categories.map((cat, idx) => (
+      <div key={idx} className="card-wrapper" onClick={() => setSelectedCategory(cat)}>
+        <div
+          className="card"
+          style={{
             backgroundImage: `url(${API_BASE}/cakes/${cat}/wall.jpg)`,
             backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}>
-            <div className="category-label">{cat}</div>
-          </div>
+            backgroundPosition: "center",
+            height: "200px"
+          }}
+        />
+        <div className="category-label">{cat}</div>
+      </div>
         ))
       ) : (
-        <>
-          <button className="back-btn" onClick={goBack}>← Back</button>
-          <div className="container">
+        
+        <div className="container">
+            {/* Back Button as a card */}
+            <div className="card back-card" onClick={goBack}>
+              ← Back
+            </div>
+
+            {/* All the cake images */}
             {images.map((img, idx) => (
-              <div key={idx} className="card">
+              <div key={idx} className="image-card-wrapper">
                 <img
                   src={`${API_BASE}${img}`}
                   alt={`${selectedCategory}-${idx}`}
@@ -54,10 +71,11 @@ const Cards = () => {
                 />
               </div>
             ))}
-          </div>
-        </>
+        </div>
+
+        
       )}
-    </div>
+    </div></div>
   );
 };
 

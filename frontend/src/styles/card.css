@@ -14,7 +14,7 @@ body{
     flex-wrap:wrap;
     gap: 10px;
     justify-content: center;
-    padding: 20px;
+    padding: 0px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
   
@@ -32,7 +32,7 @@ body{
     justify-content: center;
     padding: 4%;
     box-shadow: 2px 2px 0 var(--hoverpink);
-    
+    color: #DB3381;
   }
   
   .category{
@@ -43,16 +43,13 @@ body{
     font-weight: bold;
     font-size: 20px;
     text-shadow: 1px  1px  0 var(--hoverpink);
-    
-
   }
 
-.card:hover{
-    /* color: aqua; */
-    /* animation-name: fadeInOut, bounce;
-    animation-duration: 2s; */
-    /* background-color: rgba(0,0,0,2.5); */
+.category-label {
+  color: #c40062;
 }
+
+
 
   .back-btn {
   display: inline-block;
@@ -83,3 +80,53 @@ body{
   box-shadow: 3px 3px 0 var(--darkpink);
   transform: translateY(-2px);
 }
+
+.image-card-wrapper {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.image-card {
+  width: 100%;
+  display: block;
+  border-radius: 0.5em;
+  object-fit: cover;
+
+  transition: all 0.2s ease;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--yellow);
+  /* border-bottom: 2px solid var(--blue);  */
+  /* optional separator */
+  /* Removed: position: sticky; top: 0; */
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  color: var(--darkpink);
+  font-family: monospace;
+  text-shadow: 1px 1px 0 var(--hoverpink);
+  margin: 0;
+}
+
+.gallery-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+
+
