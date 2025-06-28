@@ -1,0 +1,85 @@
+:root{
+    --darkpink:#DB3381;
+    --hoverpink:#ffa7d0;
+    --blue:#35CAD7;
+    --yellow:#FFFACA;
+    --pink:#FFE5F1;
+}
+body{
+    background-color: var(--yellow);
+    font-family: monospace;
+}
+.container {
+    display: grid;
+    flex-wrap:wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .card {
+    /* width: ; 2 cards per row */
+    min-height:130px;
+    background-color: var(--pink);
+    border-radius: 0.5em;
+    border: 2px solid var(--blue);
+    text-align: center;
+    font-family: monospace;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4%;
+    box-shadow: 2px 2px 0 var(--hoverpink);
+    
+  }
+  
+  .category{
+    text-decoration: wavy;
+    text-align: end;
+    color: var(--blue);
+    text-decoration-color: #DB3381;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px  1px  0 var(--hoverpink);
+    
+
+  }
+
+.card:hover{
+    /* color: aqua; */
+    /* animation-name: fadeInOut, bounce;
+    animation-duration: 2s; */
+    /* background-color: rgba(0,0,0,2.5); */
+}
+
+  .back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: var(--pink);
+  color: var(--darkpink);
+  border: 2px solid var(--blue);
+  border-radius: 999px; /* super rounded, "cute" style */
+  font-family: monospace;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--hoverpink);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.back-btn::before {
+  content: "←";
+  margin-right: 8px;
+  color: var(--blue);
+}
+
+.back-btn:hover {
+  background-color: var(--hoverpink);
+  color: var(--blue);
+  box-shadow: 3px 3px 0 var(--darkpink);
+  transform: translateY(-2px);
+}
